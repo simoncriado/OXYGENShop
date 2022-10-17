@@ -1,0 +1,18 @@
+@import "base/reset";
+@import "abstracts/variables";
+
+// Components
+@import "components/header";
+@import "components/button";
+@import "components/section-one";
+@import "components/footer";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-width: 320px;
+  height: 100vh;
+}

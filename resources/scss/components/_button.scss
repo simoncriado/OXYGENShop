@@ -1,0 +1,22 @@
+@import "../abstracts/variables";
+@import "../base/typography";
+
+.btn {
+  font-family: $open-sans-font;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  background-color: $main-blue-color;
+  color: $white-color;
+  border-radius: 40px;
+
+  &--blue--big {
+    display: inline;
+    height: 67px;
+    border-style: none;
+    margin-top: 20px;
+    padding: 22px 91px 21px 92px;
+    box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
+  }
+}
