@@ -5,18 +5,69 @@
   font-family: $open-sans-font;
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  background-color: $main-blue-color;
   color: $white-color;
-  border-radius: 40px;
+  cursor: pointer;
 
-  &--blue--big {
-    display: inline;
-    height: 67px;
+  &--blue {
+    display: inline-block;
     border-style: none;
-    margin-top: 20px;
-    padding: 22px 91px 21px 92px;
+    background-color: $secondary-blue-color;
     box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
+    margin-top: 30px;
+    &--inline {
+      margin-top: 0px;
+      margin-left: 0;
+      position: relative;
+      top: -25px;
+    }
+    &--right {
+      margin-top: 35px;
+      position: relative;
+      left: 30%;
+    }
+  }
+  &--red {
+    z-index: 10;
+    display: inline-block;
+    border-style: none;
+    background-color: $secondary-red-color;
+    &--inline {
+      margin-left: 0;
+      position: relative;
+      top: -25px;
+    }
+  }
+  &--green {
+    z-index: 10;
+    display: inline-block;
+    border-style: none;
+    background-color: $main-green-color;
+    &--inline {
+      margin-left: 0;
+      position: relative;
+      top: -25px;
+    }
+  }
+  &--big {
+    height: 67px;
+    line-height: 138%;
+    padding: 21px 91px 21px 91px;
+    border-radius: 40px;
+    font-size: 16px;
+    box-shadow: none;
+  }
+  &--small {
+    height: 50px;
+    line-height: 18px;
+    padding: 16px 56px;
+    border-radius: 23px;
+    font-size: 13px;
+  }
+  &--medium {
+    height: 57px;
+    line-height: 18px;
+    padding: 20px 97px;
+    border-radius: 35px;
+    font-size: 13px;
   }
 }

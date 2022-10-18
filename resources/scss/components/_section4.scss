@@ -1,0 +1,127 @@
+@import "../abstracts/variables";
+@import "../base/typography";
+
+.section {
+  width: 100%;
+  left: 0%;
+  top: 0%;
+  text-align: center;
+  &--four {
+    width: 85%;
+    margin: auto;
+    text-align: left;
+  }
+  &__title {
+    &--four {
+      font-family: $raleway-font;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 47px;
+      padding-top: 50px;
+    }
+  }
+  &__paragraph {
+    &--four {
+      font-family: $open-sans-font;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      padding: 5px 0 0 0;
+    }
+  }
+  &__email {
+    & img {
+      margin-top: 38px;
+      margin-right: 5px;
+      height: 22px;
+      width: 23px;
+      vertical-align: bottom;
+    }
+    & p {
+      display: inline-block;
+      font-family: $open-sans-font;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: $light-grey-color;
+    }
+  }
+  &__phone {
+    & img {
+      margin-top: 17px;
+      margin-right: 5px;
+      height: 22px;
+      width: 23px;
+      vertical-align: bottom;
+    }
+    & p {
+      display: inline-block;
+      font-family: $open-sans-font;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: $light-grey-color;
+    }
+  }
+  &__form {
+    &--name {
+      display: block;
+      padding-top: 56px;
+      font-family: $open-sans-font;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 15px;
+      color: $main-blue-color;
+    }
+    &--inputName {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #95989a;
+      line-height: 40px;
+      cursor: pointer;
+    }
+    &--email {
+      display: block;
+      padding-top: 42px;
+      font-family: $open-sans-font;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 15px;
+      color: $main-blue-color;
+    }
+    &--inputEmail {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #95989a;
+      line-height: 40px;
+      cursor: pointer;
+    }
+  }
+  &__consent {
+    margin-top: 31px;
+    &--input {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+      vertical-align: top;
+      border: 1px solid red;
+      cursor: pointer;
+    }
+    &--text {
+      display: inline-block;
+      width: 85%;
+      font-family: $open-sans-font;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      color: #707070;
+    }
+  }
+}

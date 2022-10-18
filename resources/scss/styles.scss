@@ -4,15 +4,11 @@
 // Components
 @import "components/header";
 @import "components/button";
-@import "components/section-one";
+@import "components/section1";
+@import "components/section2";
+@import "components/section3";
+@import "components/section4";
 @import "components/footer";
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  min-width: 320px;
-  height: 100vh;
-}
+// At the beginning I had all styles in this file
+// @import "components/sections";

@@ -1,0 +1,108 @@
+@import "../abstracts/variables";
+@import "../base/typography";
+
+.section {
+  width: 100%;
+  left: 0%;
+  top: 0%;
+  text-align: center;
+  &--one {
+    height: 1300px;
+  }
+  &__title {
+    &--one {
+      font-family: $raleway-font;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 35px;
+      line-height: 41px;
+      padding-top: 100px;
+    }
+  }
+  &__paragraph {
+    &--one {
+      font-family: $open-sans-font;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 144%;
+      padding: 20px 10% 0 10%;
+    }
+  }
+  &__img {
+    padding-top: 51px;
+  }
+  &__subtitle {
+    &--one {
+      font-family: $raleway-font;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 30px;
+      line-height: 117%;
+      padding: 13px 10% 0 10%;
+    }
+  }
+  &__icon {
+    font-family: $raleway-font;
+    font-style: normal;
+    padding: 25px 0 0 0;
+    z-index: 5;
+    & img {
+      position: absolute;
+      left: 50%;
+      margin-top: 5px;
+    }
+    & h3 {
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 5.96px;
+      line-height: 120%;
+      padding-top: 14px;
+    }
+    & p {
+      font-weight: 400;
+      font-size: 17px;
+      color: $light-grey-color;
+      line-height: 118%;
+      padding-top: 19px;
+    }
+    &--green {
+      padding-bottom: 50px;
+    }
+  }
+  .circle {
+    display: inline-block;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    text-align: center;
+    &--red {
+      background-color: $main-red-color;
+      &--big {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        border-radius: 41px;
+        transform: rotate(-45deg);
+        left: 55%;
+        margin-top: 15px;
+      }
+    }
+    &--blue {
+      background-color: $main-blue-color;
+      &--big {
+        position: absolute;
+        width: 131px;
+        height: 131px;
+        left: 30%;
+        margin-top: 12px;
+      }
+    }
+    &--green {
+      background-color: $main-green-color;
+    }
+  }
+  .eye {
+    margin-top: 13px !important;
+  }
+}
