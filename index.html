@@ -9,6 +9,14 @@
   <body>
     <header class="header">
       <h1 class="header__title">OXYGENShop</h1>
+      <nav>
+        <ul>
+          <li>why us</li>
+          <li>benefits</li>
+          <li>prices</li>
+          <li>contact</li>
+        </ul>
+      </nav>
       <img
         class="header__img"
         src="resources/images/Menu.png"
@@ -28,32 +36,34 @@
         <div>
           <img
             class="section__img"
-            src="resources/images/Background 1.png"
+            src="resources/images/Background.png"
             alt="Laptop Image"
           />
           <h1 class="section__subtitle section__subtitle--one">
             The most popular sales platform in country
           </h1>
-          <div class="section__icon section__icon--red">
-            <img src="resources/images/body.png" alt="Human body icon" />
-            <div class="circle circle--red"></div>
-            <h3>100000+</h3>
-            <p>daily entries</p>
-          </div>
-          <div class="section__icon section__icon--blue">
-            <img class="eye" src="resources/images/eye.png" alt="Eye icon" />
-            <div class="circle circle--blue"></div>
-            <h3>2000000+</h3>
-            <p>
-              seen products <br />
-              every day
-            </p>
-          </div>
-          <div class="section__icon section__icon--green">
-            <img src="resources/images/folder.png" alt="Folder icon" />
-            <div class="circle circle--green"></div>
-            <h3>10000+</h3>
-            <p>added posts daily</p>
+          <div class="section__iconList">
+            <div class="section__icon section__icon--red">
+              <img src="resources/images/body.png" alt="Human body icon" />
+              <div class="circleOne circleOne--red"></div>
+              <h3>100000+</h3>
+              <p>daily entries</p>
+            </div>
+            <div class="section__icon section__icon--blue">
+              <img class="eye" src="resources/images/eye.png" alt="Eye icon" />
+              <div class="circleOne circleOne--blue"></div>
+              <h3>2000000+</h3>
+              <p>
+                seen products <br />
+                every day
+              </p>
+            </div>
+            <div class="section__icon section__icon--green">
+              <img src="resources/images/folder.png" alt="Folder icon" />
+              <div class="circleOne circleOne--green"></div>
+              <h3>10000+</h3>
+              <p>added posts daily</p>
+            </div>
           </div>
         </div>
       </section>
@@ -62,25 +72,49 @@
       <section class="section section--two">
         <div class="section__card section__card--red">
           <div>
-            <div class="circle circle--red circle--red--big"></div>
-            <img src="resources/images/Macbook2 2.png" alt="Laptop" />
+            <div class="circleTwo circleTwo--red circleTwo--red--big"></div>
+            <img
+              class="smallimg smallimg--red"
+              src="resources/images/Macbook2 2.png"
+              alt="Laptop"
+            />
+            <img
+              class="bigimg bigimg--red"
+              src="resources/images/MacbookBig.png"
+              alt="Big Laptop"
+            />
           </div>
-          <h3>Be always first</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
+          <div>
+            <h3>Be always first</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+          </div>
         </div>
         <div class="section__card section__card--blue">
-          <div class="circle circle--blue circle--blue--big"></div>
-          <img src="resources/images/iPhone2 2.png" alt="Iphone" />
-          <h3>Your shop is where you are!</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
+          <div>
+            <div class="circleTwo circleTwo--blue circleTwo--blue--big"></div>
+            <img
+              class="smallimg smallimg--blue"
+              src="resources/images/iPhone2 2.png"
+              alt="Iphone"
+            />
+            <img
+              class="bigimg bigimg--blue"
+              src="resources/images/iPhoneBig.png"
+              alt="Big Iphone"
+            />
+          </div>
+          <div>
+            <h3>Your shop is where you are!</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+          </div>
         </div>
         <div class="section__card section__card--green">
           <h3>Increase recognition your brand!</h3>
@@ -89,10 +123,14 @@
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam.
           </p>
-          <div class="rectangle">
-            <div class="rectangle rectangle--green"></div>
-            <img src="resources/images/Trumpet 2.png" alt="Trumpet" />
-          </div>
+        </div>
+        <div class="rectangle">
+          <div class="rectangle-"></div>
+          <img
+            class="img--green"
+            src="resources/images/Trumpet 2.png"
+            alt="Trumpet"
+          />
         </div>
       </section>
 
@@ -100,104 +138,114 @@
       <section class="section section--three">
         <h1 class="section__title section__title--three">Pricing</h1>
 
-        <!-- Pricing one -->
-        <div class="section__price section__price--red">
+        <div class="pricesList">
+          <!-- Pricing one -->
           <div>
-            <h1>Basic</h1>
-            <h2>$0</h2>
+            <div class="section__price section__price--red">
+              <div>
+                <h1>Basic</h1>
+                <h2>$0</h2>
+              </div>
+              <div class="list">
+                <div>
+                  <img src="resources/images/Checkbox.png" alt="included" />
+                  <p>100 MB HDD</p>
+                </div>
+                <div>
+                  <img src="resources/images/Checkbox.png" alt="included" />
+                  <p>1 Subdomain</p>
+                </div>
+                <div>
+                  <img src="resources/images/Checkbox.png" alt="included" />
+                  <p>2 E-mails</p>
+                </div>
+                <div>
+                  <img src="resources/images/Cross.png" alt="not included" />
+                  <p>Two years license</p>
+                </div>
+                <div>
+                  <img src="resources/images/Cross.png" alt="not included" />
+                  <p>Full support</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn--red btn--red--inline btn--small">
+              Begin
+            </button>
           </div>
-          <div class="list">
-            <div>
-              <img src="resources/images/Checkbox.png" alt="included" />
-              <p>100 MB HDD</p>
-            </div>
-            <div>
-              <img src="resources/images/Checkbox.png" alt="included" />
-              <p>1 Subdomain</p>
-            </div>
-            <div>
-              <img src="resources/images/Checkbox.png" alt="included" />
-              <p>2 E-mails</p>
-            </div>
-            <div>
-              <img src="resources/images/Cross.png" alt="not included" />
-              <p>Two years license</p>
-            </div>
-            <div>
-              <img src="resources/images/Cross.png" alt="not included" />
-              <p>Full support</p>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn--red btn--red--inline btn--small">Begin</button>
 
-        <!-- Pricing two -->
-        <div class="section__price section__price--blue">
+          <!-- Pricing two -->
           <div>
-            <h1>Professional</h1>
-            <h2>$25</h2>
-            <p>Limited offer</p>
+            <div class="section__price section__price--blue">
+              <div>
+                <h1>Professional</h1>
+                <h2>$25</h2>
+                <p>Limited offer</p>
+              </div>
+              <div class="list">
+                <div>
+                  <img src="resources/images/Checkbox.png" alt="included" />
+                  <p>500 MB HDD</p>
+                </div>
+                <div>
+                  <img src="resources/images/Checkbox.png" alt="included" />
+                  <p>2 Subdomain</p>
+                </div>
+                <div>
+                  <img src="resources/images/Checkbox.png" alt="included" />
+                  <p>5 E-mails</p>
+                </div>
+                <div>
+                  <img src="resources/images/Checkbox.png" alt="included" />
+                  <p>One years license</p>
+                </div>
+                <div>
+                  <img src="resources/images/Cross.png" alt="not included" />
+                  <p>Full support</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn--blue btn--blue--inline btn--small">
+              Begin
+            </button>
           </div>
-          <div class="list">
-            <div>
-              <img src="resources/images/Checkbox.png" alt="included" />
-              <p>500 MB HDD</p>
-            </div>
-            <div>
-              <img src="resources/images/Checkbox.png" alt="included" />
-              <p>2 Subdomain</p>
-            </div>
-            <div>
-              <img src="resources/images/Checkbox.png" alt="included" />
-              <p>5 E-mails</p>
-            </div>
-            <div>
-              <img src="resources/images/Checkbox.png" alt="included" />
-              <p>One years license</p>
-            </div>
-            <div>
-              <img src="resources/images/Cross.png" alt="not included" />
-              <p>Full support</p>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn--blue btn--blue--inline btn--small">
-          Begin
-        </button>
 
-        <!-- Pricing three -->
-        <div class="section__price section__price--green">
+          <!-- Pricing three -->
           <div>
-            <h1>Premium</h1>
-            <h2>$60</h2>
-            <p>Limited offer</p>
-          </div>
-          <div class="list">
-            <div>
-              <img src="resources/images/Checkbox.png" alt="included" />
-              <p>2 GB HDD</p>
+            <div class="section__price section__price--green">
+              <div>
+                <h1>Premium</h1>
+                <h2>$60</h2>
+                <p>Limited offer</p>
+              </div>
+              <div class="list">
+                <div>
+                  <img src="resources/images/Checkbox.png" alt="included" />
+                  <p>2 GB HDD</p>
+                </div>
+                <div>
+                  <img src="resources/images/Checkbox.png" alt="included" />
+                  <p>5 Subdomain</p>
+                </div>
+                <div>
+                  <img src="resources/images/Checkbox.png" alt="included" />
+                  <p>20 E-mails</p>
+                </div>
+                <div>
+                  <img src="resources/images/Checkbox.png" alt="included" />
+                  <p>Two years license</p>
+                </div>
+                <div>
+                  <img src="resources/images/Checkbox.png" alt="included" />
+                  <p>Full support</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <img src="resources/images/Checkbox.png" alt="included" />
-              <p>5 Subdomain</p>
-            </div>
-            <div>
-              <img src="resources/images/Checkbox.png" alt="included" />
-              <p>20 E-mails</p>
-            </div>
-            <div>
-              <img src="resources/images/Checkbox.png" alt="included" />
-              <p>Two years license</p>
-            </div>
-            <div>
-              <img src="resources/images/Checkbox.png" alt="included" />
-              <p>Full support</p>
-            </div>
+            <button class="btn btn--green btn--green--inline btn--small">
+              Begin
+            </button>
           </div>
         </div>
-        <button class="btn btn--green btn--green--inline btn--small">
-          Begin
-        </button>
       </section>
 
       <!-- Section contact -->

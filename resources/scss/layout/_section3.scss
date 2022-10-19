@@ -1,8 +1,7 @@
-@import "../abstracts/variables";
-@import "../base/typography";
+@use "../core/mediaQueries" as mq;
 
 @import "../abstracts/variables";
-@import "../base/typography";
+@import "../core/typography";
 
 .section {
   width: 100%;
@@ -14,9 +13,24 @@
       font-family: $raleway-font;
       font-style: normal;
       font-weight: 400;
-      font-size: 35px;
-      line-height: 41px;
+      font-size: 2.1875rem;
+      line-height: 2.5625rem;
       padding-top: 53px;
+      @include mq.desktop {
+        font-size: 2.25rem;
+        line-height: 2.625rem;
+        padding-top: 130px;
+      }
+    }
+  }
+  @include mq.desktop {
+    .pricesList {
+      min-height: 700px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      // padding: 0 10% 0 10%;
     }
   }
 
@@ -27,24 +41,34 @@
     width: 100%;
     border-radius: 18px;
     margin: auto;
+    @include mq.desktop {
+      flex-direction: column;
+    }
     &--red {
       width: 80%;
       height: 251px;
       margin-top: 14px;
       border: 1px solid $main-red-color;
+      @include mq.desktop {
+        min-width: 300px;
+        min-height: 460px;
+      }
       & h1 {
         font-family: $raleway-font;
         font-style: normal;
         font-weight: 700;
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        @include mq.desktop {
+          padding-top: 40px;
+        }
       }
       & h2 {
         font-family: $open-sans-font;
         font-style: normal;
         font-weight: 300;
-        font-size: 46px;
-        line-height: 64px;
+        font-size: 2.875rem;
+        line-height: 4rem;
         color: $main-red-color;
       }
       & .list {
@@ -52,22 +76,24 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        padding-top: 25px;
-        padding-bottom: 50px;
+        padding: 25px 0 50px 0;
         & div {
           display: flex;
           vertical-align: middle;
+          @include mq.desktop {
+            justify-content: center;
+          }
           & img {
-            height: 11px;
-            width: 11px;
+            height: 0.6875rem;
+            width: 0.6875rem;
             margin: auto 10px auto 0;
           }
           & p {
             font-family: $open-sans-font;
             font-style: normal;
             font-weight: 400;
-            font-size: 14px;
-            line-height: 19px;
+            font-size: 0.875rem;
+            line-height: 1.1875rem;
           }
         }
       }
@@ -78,19 +104,26 @@
       margin-top: 14px;
       border: 1px solid $secondary-blue-color;
       box-shadow: 5px 10px 27px rgba(7, 172, 230, 0.29);
+      @include mq.desktop {
+        min-width: 350px;
+        min-height: 500px;
+      }
       & h1 {
         font-family: $raleway-font;
         font-style: normal;
         font-weight: 700;
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        @include mq.desktop {
+          padding-top: 40px;
+        }
       }
       & h2 {
         font-family: $open-sans-font;
         font-style: normal;
         font-weight: 300;
-        font-size: 46px;
-        line-height: 64px;
+        font-size: 2.875rem;
+        line-height: 4rem;
         color: $secondary-blue-color;
       }
       & p {
@@ -105,22 +138,24 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        padding-top: 25px;
-        padding-bottom: 50px;
+        padding: 25px 0 50px 0;
         & div {
           display: flex;
           vertical-align: middle;
+          @include mq.desktop {
+            justify-content: center;
+          }
           & img {
-            height: 11px;
-            width: 11px;
+            height: 0.6875rem;
+            width: 0.6875rem;
             margin: auto 10px auto 0;
           }
           & p {
             font-family: $open-sans-font;
             font-style: normal;
             font-weight: 400;
-            font-size: 14px;
-            line-height: 19px;
+            font-size: 0.875rem;
+            line-height: 1.1875rem;
           }
         }
       }
@@ -130,19 +165,26 @@
       height: 251px;
       margin-top: 14px;
       border: 1px solid $main-green-color;
+      @include mq.desktop {
+        min-width: 300px;
+        min-height: 460px;
+      }
       & h1 {
         font-family: $raleway-font;
         font-style: normal;
         font-weight: 700;
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        @include mq.desktop {
+          padding-top: 40px;
+        }
       }
       & h2 {
         font-family: $open-sans-font;
         font-style: normal;
         font-weight: 300;
-        font-size: 46px;
-        line-height: 64px;
+        font-size: 2.875rem;
+        line-height: 4rem;
         color: $main-green-color;
       }
       & p {
@@ -157,22 +199,24 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        padding-top: 25px;
-        padding-bottom: 50px;
+        padding: 25px 0 50px 0;
         & div {
           display: flex;
           vertical-align: middle;
+          @include mq.desktop {
+            justify-content: center;
+          }
           & img {
-            height: 11px;
-            width: 11px;
+            height: 0.6875rem;
+            width: 0.6875rem;
             margin: auto 10px auto 0;
           }
           & p {
             font-family: $open-sans-font;
             font-style: normal;
             font-weight: 400;
-            font-size: 14px;
-            line-height: 19px;
+            font-size: 0.875rem;
+            line-height: 1.1875rem;
           }
         }
       }

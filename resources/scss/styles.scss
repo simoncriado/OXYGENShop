@@ -1,14 +1,17 @@
-@import "base/reset";
-@import "abstracts/variables";
+// Layout
+@import "layout/header";
+@import "layout/section1";
+@import "layout/section2";
+@import "layout/section3";
+@import "layout/section4";
+@import "layout/footer";
 
 // Components
-@import "components/header";
 @import "components/button";
-@import "components/section1";
-@import "components/section2";
-@import "components/section3";
-@import "components/section4";
-@import "components/footer";
+
+// Others
+@import "core/reset";
+@import "abstracts/variables";
 
 // At the beginning I had all styles in this file
 // @import "components/sections";

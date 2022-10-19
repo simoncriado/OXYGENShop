@@ -1,0 +1,133 @@
+@use "../core/mediaQueries" as mq;
+
+@import "../abstracts/variables";
+@import "../core/typography";
+
+.section {
+  width: 100%;
+  left: 0%;
+  top: 0%;
+  text-align: center;
+
+  &--one {
+    // I think the fixed height is not needed anymore. Maybe change it for min-height in case needed at some point
+    // height: 1300px;
+    // Otherwise the banner img deforms the whole page
+    overflow: hidden;
+  }
+  &__title {
+    &--one {
+      font-family: $raleway-font;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 2.1875rem;
+      line-height: 2.5625rem;
+      padding-top: 100px;
+      @include mq.desktop {
+        font-size: 3.0625rem;
+        line-height: 3.5625rem;
+      }
+    }
+  }
+  &__paragraph {
+    &--one {
+      font-family: $open-sans-font;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 144%;
+      padding: 20px 10% 0 10%;
+    }
+  }
+  &__img {
+    // This centers the img even if the screen is smaller than the img´s width
+    margin: 0 -9999% 0 -9999%;
+    max-width: 100%;
+    min-width: 600px;
+    padding-top: 50px;
+  }
+  &__subtitle {
+    &--one {
+      font-family: $raleway-font;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1.875rem;
+      line-height: 117%;
+      padding: 15px 10% 0 10%;
+      @include mq.desktop {
+        padding: 50px 10% 0 10%;
+        font-weight: 400;
+        font-size: 2.25rem;
+      }
+    }
+  }
+  &__iconList {
+    @include mq.desktop {
+      display: flex;
+      width: 60%;
+      margin: auto;
+      padding: 100px 0;
+      justify-content: space-between;
+    }
+  }
+  &__icon {
+    font-family: $raleway-font;
+    font-style: normal;
+    padding: 25px 0 0 0;
+    z-index: 5;
+    & img {
+      position: absolute;
+      left: 50%;
+      margin-top: 5px;
+      @include mq.desktop {
+        position: relative;
+        left: 30%;
+        margin-bottom: 10px;
+      }
+    }
+    & h3 {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: 5.96px;
+      line-height: 120%;
+      padding-top: 1rem;
+    }
+    & p {
+      font-weight: 400;
+      font-size: 1.0625rem;
+      color: $light-grey-color;
+      line-height: 118%;
+      padding-top: 1rem;
+    }
+    &--green {
+      padding-bottom: 50px;
+    }
+  }
+  .circleOne {
+    display: inline-block;
+    width: 3.875rem;
+    height: 3.875rem;
+    border-radius: 50%;
+    text-align: center;
+    @include mq.desktop {
+      position: relative;
+      right: 30%;
+      z-index: -10;
+    }
+    &--red {
+      background-color: $main-red-color;
+    }
+    &--blue {
+      background-color: $main-blue-color;
+    }
+    &--green {
+      background-color: $main-green-color;
+    }
+  }
+  .eye {
+    margin-top: 13px !important;
+    @include mq.desktop {
+      margin-bottom: 10px !important;
+    }
+  }
+}

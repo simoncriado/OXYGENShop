@@ -1,0 +1,300 @@
+@use "../core/mediaQueries" as mq;
+
+@import "../abstracts/variables";
+@import "../core/typography";
+
+.section {
+  width: 100%;
+  left: 0%;
+  top: 0%;
+  text-align: center;
+  &--two {
+    // I think the fixed height is not needed anymore. Maybe change it for min-height in case needed at some point
+    // height: 1395px;
+    background-color: $light-grey-background-color;
+    padding-top: 2.625rem;
+    @include mq.desktop {
+      padding-top: 6.5625rem;
+    }
+  }
+
+  &__card {
+    background-color: $white-color;
+    border: 1px solid #e8e9ed;
+    border-radius: 5px;
+    min-height: 370px;
+    width: 85%;
+    margin: auto;
+    margin-bottom: 2.625rem;
+    @include mq.desktop {
+      width: 75%;
+    }
+    &--red {
+      @include mq.desktop {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        & div {
+          width: 50%;
+        }
+      }
+      & img {
+        position: relative;
+        z-index: 99;
+      }
+      & h3 {
+        text-align: left;
+        font-family: $raleway-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.875rem;
+        line-height: 2.1875rem;
+        padding: 25px 0 0 20px;
+        @include mq.desktop {
+          font-size: 2.25rem;
+          line-height: 2.625rem;
+        }
+      }
+      & p {
+        text-align: left;
+        font-family: $open-sans-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.3125rem;
+        padding: 20px 20px 0 20px;
+        @include mq.desktop {
+          font-size: 1rem;
+          line-height: 22px;
+          padding: 30px 21px 50px 21px;
+          display: inline-block;
+          position: relative;
+        }
+      }
+      p:before {
+        @include mq.desktop {
+          content: "";
+          position: absolute;
+          width: 65%;
+          height: 1px;
+          bottom: 0;
+          right: 29%;
+          border-bottom: 3px solid $main-red-color;
+        }
+      }
+    }
+    &--blue {
+      @include mq.desktop {
+        display: flex;
+        align-items: center;
+        height: 370px;
+        & div {
+          width: 50%;
+        }
+      }
+      & img {
+        position: relative;
+        z-index: 99;
+      }
+      & h3 {
+        text-align: left;
+        font-family: $raleway-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.875rem;
+        line-height: 2.1875rem;
+        padding: 25px 0 0 20px;
+        @include mq.desktop {
+          font-size: 2.25rem;
+          line-height: 2.625rem;
+        }
+      }
+      & p {
+        text-align: left;
+        font-family: $open-sans-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.3125rem;
+        padding: 20px 20px 0 20px;
+        @include mq.desktop {
+          font-size: 1rem;
+          line-height: 22px;
+          padding: 30px 21px 50px 21px;
+          display: inline-block;
+          position: relative;
+        }
+      }
+      p:before {
+        @include mq.desktop {
+          content: "";
+          position: absolute;
+          width: 65%;
+          height: 1px;
+          bottom: 0;
+          right: 29%;
+          border-bottom: 3px solid $main-blue-color;
+        }
+      }
+    }
+    &--green {
+      height: 298px;
+      margin-bottom: 0;
+      box-sizing: border-box;
+      @include mq.desktop {
+        display: inline-block;
+        min-height: 370px;
+        width: 40%;
+      }
+      & h3 {
+        text-align: left;
+        font-family: $raleway-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.875rem;
+        line-height: 2.1875rem;
+        padding: 25px 0 0 20px;
+        @include mq.desktop {
+          font-size: 2.25rem;
+          line-height: 2.625rem;
+        }
+      }
+      & p {
+        text-align: left;
+        font-family: $open-sans-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.3125rem;
+        padding: 20px 20px 0 20px;
+        @include mq.desktop {
+          font-size: 1rem;
+          line-height: 22px;
+          padding: 30px 21px 50px 21px;
+          display: inline-block;
+          position: relative;
+        }
+      }
+      p:before {
+        @include mq.desktop {
+          content: "";
+          position: absolute;
+          width: 65%;
+          height: 1px;
+          bottom: 0;
+          right: 29%;
+          border-bottom: 3px solid $main-green-color;
+        }
+      }
+    }
+  }
+  .circleTwo {
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    &--red {
+      background-color: $main-red-color;
+      &--big {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        border-radius: 41px;
+        transform: rotate(-45deg);
+        left: 51%;
+        margin-top: 15px;
+        @include mq.desktop {
+          position: relative;
+          display: inline-block;
+          width: 180px;
+          height: 180px;
+          left: 40px;
+          top: 60px;
+          margin-top: 0;
+        }
+      }
+    }
+    &--blue {
+      background-color: $main-blue-color;
+      &--big {
+        position: absolute;
+        width: 131px;
+        height: 131px;
+        margin-top: 12px;
+        @include mq.desktop {
+          position: relative;
+          display: inline-block;
+          width: 320px;
+          height: 320px;
+          left: 0;
+          bottom: -145px;
+          margin-top: 0;
+        }
+      }
+    }
+    &--green {
+      background-color: $main-green-color;
+    }
+  }
+}
+
+.rectangle {
+  display: inline-block;
+  position: relative;
+  width: 85%;
+  top: -3px;
+  margin-bottom: 42px;
+  height: 195px;
+  background-color: $main-green-color;
+  border: 1px solid #e8e9ed;
+  border-radius: 5px;
+  @include mq.desktop {
+    position: static;
+    width: 30%;
+    height: 370px;
+    margin: 0 0 105px 5%;
+    top: 0;
+  }
+  & .img--green {
+    position: relative;
+    left: -5%;
+    padding-top: 30px;
+    @include mq.desktop {
+      left: 0;
+      margin-top: 0px;
+      padding-top: 0px;
+    }
+  }
+}
+.bigimg {
+  display: none;
+  &--red {
+    @include mq.desktop {
+      display: block;
+      width: 300px;
+      height: 185px;
+      margin-left: 10%;
+      bottom: 60px;
+    }
+  }
+  &--blue {
+    @include mq.desktop {
+      display: inline-block;
+      width: 295px;
+      height: 295px;
+      margin-left: 10%;
+      bottom: 130px;
+    }
+  }
+}
+.smallimg {
+  &--red {
+    padding-top: 37px;
+  }
+  &--blue {
+    padding-top: 19px;
+  }
+
+  @include mq.desktop {
+    display: none;
+  }
+}

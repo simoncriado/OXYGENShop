@@ -1,5 +1,5 @@
 @import "../abstracts/variables";
-@import "../base/typography";
+@import "../core/typography";
 
 .btn {
   font-family: $open-sans-font;
@@ -21,9 +21,9 @@
       top: -25px;
     }
     &--right {
-      margin-top: 35px;
       position: relative;
-      left: 30%;
+      float: right;
+      margin-bottom: 44px;
     }
   }
   &--red {
