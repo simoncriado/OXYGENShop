@@ -22,7 +22,6 @@
     background-color: $white-color;
     border: 1px solid #e8e9ed;
     border-radius: 5px;
-    min-height: 370px;
     width: 85%;
     margin: auto;
     margin-bottom: 2.625rem;
@@ -30,6 +29,7 @@
       width: 75%;
     }
     &--red {
+      min-height: 370px;
       @include mq.desktop {
         display: flex;
         flex-direction: row-reverse;
@@ -51,8 +51,10 @@
         line-height: 2.1875rem;
         padding: 25px 0 0 20px;
         @include mq.desktop {
+          max-width: 80%;
           font-size: 2.25rem;
           line-height: 2.625rem;
+          padding: 25px 0 0 15%;
         }
       }
       & p {
@@ -64,10 +66,11 @@
         line-height: 1.3125rem;
         padding: 20px 20px 0 20px;
         @include mq.desktop {
+          max-width: 80%;
           font-size: 1rem;
           line-height: 22px;
-          padding: 30px 21px 50px 21px;
-          display: inline-block;
+          padding: 30px 21px 50px 15%;
+          // display: inline-block;
           position: relative;
         }
       }
@@ -78,12 +81,12 @@
           width: 65%;
           height: 1px;
           bottom: 0;
-          right: 29%;
           border-bottom: 3px solid $main-red-color;
         }
       }
     }
     &--blue {
+      min-height: 370px;
       @include mq.desktop {
         display: flex;
         align-items: center;
@@ -105,8 +108,10 @@
         line-height: 2.1875rem;
         padding: 25px 0 0 20px;
         @include mq.desktop {
+          max-width: 80%;
           font-size: 2.25rem;
           line-height: 2.625rem;
+          padding: 25px 15% 0 20px;
         }
       }
       & p {
@@ -118,10 +123,11 @@
         line-height: 1.3125rem;
         padding: 20px 20px 0 20px;
         @include mq.desktop {
+          max-width: 80%;
           font-size: 1rem;
           line-height: 22px;
-          padding: 30px 21px 50px 21px;
-          display: inline-block;
+          padding: 30px 5% 50px 21px;
+          // display: inline-block;
           position: relative;
         }
       }
@@ -132,7 +138,6 @@
           width: 65%;
           height: 1px;
           bottom: 0;
-          right: 29%;
           border-bottom: 3px solid $main-blue-color;
         }
       }
@@ -142,9 +147,12 @@
       margin-bottom: 0;
       box-sizing: border-box;
       @include mq.desktop {
-        display: inline-block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         min-height: 370px;
-        width: 40%;
+        min-width: 40%;
+        margin: 0;
       }
       & h3 {
         text-align: left;
@@ -155,8 +163,10 @@
         line-height: 2.1875rem;
         padding: 25px 0 0 20px;
         @include mq.desktop {
+          max-width: 80%;
           font-size: 2.25rem;
           line-height: 2.625rem;
+          padding: 0 0 0 10%;
         }
       }
       & p {
@@ -168,10 +178,11 @@
         line-height: 1.3125rem;
         padding: 20px 20px 0 20px;
         @include mq.desktop {
+          max-width: 80%;
           font-size: 1rem;
           line-height: 22px;
-          padding: 30px 21px 50px 21px;
-          display: inline-block;
+          padding: 30px 21px 50px 10%;
+          // display: inline-block;
           position: relative;
         }
       }
@@ -182,10 +193,16 @@
           width: 65%;
           height: 1px;
           bottom: 0;
-          right: 29%;
           border-bottom: 3px solid $main-green-color;
         }
       }
+    }
+  }
+  .sectionThree {
+    @include mq.desktop {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 12.5% 0 12.5%;
     }
   }
   .circleTwo {
@@ -249,7 +266,8 @@
   border-radius: 5px;
   @include mq.desktop {
     position: static;
-    width: 30%;
+    min-width: 30%;
+    max-width: 40%;
     height: 370px;
     margin: 0 0 105px 5%;
     top: 0;
@@ -259,9 +277,9 @@
     left: -5%;
     padding-top: 30px;
     @include mq.desktop {
-      left: 0;
+      left: -20px;
       margin-top: 0px;
-      padding-top: 0px;
+      padding-top: 25%;
     }
   }
 }

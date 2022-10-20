@@ -12,7 +12,7 @@
   &--one {
     // I think the fixed height is not needed anymore. Maybe change it for min-height in case needed at some point
     // height: 1300px;
-    // Otherwise the banner img deforms the whole page
+    // overflow hidden because otherwise the banner img deforms the whole page
     overflow: hidden;
   }
   &__title {
@@ -73,15 +73,19 @@
   &__icon {
     font-family: $raleway-font;
     font-style: normal;
+    position: relative;
     padding: 25px 0 0 0;
     z-index: 5;
+    @include mq.desktop {
+      min-width: 150px;
+    }
     & img {
       position: absolute;
       left: 50%;
       margin-top: 5px;
       @include mq.desktop {
         position: relative;
-        left: 30%;
+        left: 15%;
         margin-bottom: 10px;
       }
     }
@@ -110,7 +114,7 @@
     border-radius: 50%;
     text-align: center;
     @include mq.desktop {
-      position: relative;
+      position: absolute;
       right: 30%;
       z-index: -10;
     }

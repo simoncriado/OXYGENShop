@@ -7,25 +7,32 @@
     <title>OXYGEN Shop</title>
   </head>
   <body>
-    <header class="header">
-      <h1 class="header__title">OXYGENShop</h1>
-      <nav>
-        <ul>
-          <li>why us</li>
-          <li>benefits</li>
-          <li>prices</li>
-          <li>contact</li>
-        </ul>
+    <header>
+      <nav class="nav">
+        <div class="nav__container">
+          <h1 class="nav__logo">OXYGENShop</h1>
+
+          <label for="menu" class="nav__label">
+            <img
+              class="nav__img"
+              src="resources/images/Menu.png"
+              alt="Display menu"
+            />
+          </label>
+          <input type="checkbox" id="menu" class="nav__input" />
+
+          <div class="nav__menu">
+            <a href="#whyUs" class="nav__item">why us</a>
+            <a href="#benefits" class="nav__item">benefits</a>
+            <a href="#prices" class="nav__item">prices</a>
+            <a href="#contact" class="nav__item">contact</a>
+          </div>
+        </div>
       </nav>
-      <img
-        class="header__img"
-        src="resources/images/Menu.png"
-        alt="Display menu"
-      />
     </header>
     <main>
       <!-- Section Shop Overview -->
-      <section class="section section--one">
+      <section id="whyUs" class="section section--one">
         <div>
           <h1 class="section__title section__title--one">Sell More!</h1>
           <p class="section__paragraph section__paragraph--one">
@@ -69,7 +76,7 @@
       </section>
 
       <!-- Section cards -->
-      <section class="section section--two">
+      <section id="benefits" class="section section--two">
         <div class="section__card section__card--red">
           <div>
             <div class="circleTwo circleTwo--red circleTwo--red--big"></div>
@@ -116,26 +123,28 @@
             </p>
           </div>
         </div>
-        <div class="section__card section__card--green">
-          <h3>Increase recognition your brand!</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
-        </div>
-        <div class="rectangle">
-          <div class="rectangle-"></div>
-          <img
-            class="img--green"
-            src="resources/images/Trumpet 2.png"
-            alt="Trumpet"
-          />
+        <div class="sectionThree">
+          <div class="section__card section__card--green">
+            <h3>Increase recognition your brand!</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+          </div>
+          <div class="rectangle">
+            <div class="rectangle-"></div>
+            <img
+              class="img--green"
+              src="resources/images/Trumpet 2.png"
+              alt="Trumpet"
+            />
+          </div>
         </div>
       </section>
 
       <!-- Section pricing -->
-      <section class="section section--three">
+      <section id="prices" class="section section--three">
         <h1 class="section__title section__title--three">Pricing</h1>
 
         <div class="pricesList">
@@ -249,41 +258,47 @@
       </section>
 
       <!-- Section contact -->
-      <section class="section section--four">
-        <h1 class="section__title section__title--four">Any questions?</h1>
-        <p class="section__paragraph section__paragraph--four">
-          Leave your email address or call us!
-        </p>
+      <section id="contact" class="section section--four">
         <div>
-          <div class="section__email">
-            <img src="resources/images/envelop-icon.png" alt="envelop icon" />
-            <p>info@bestshop.xyz</p>
-          </div>
-          <div class="section__phone">
-            <img src="resources/images/phone-icon.png" alt="phone icon" />
-            <p>123 456 789</p>
-          </div>
-        </div>
-        <div class="section__form">
-          <label class="section__form--name" for="name">NAME</label>
-          <input class="section__form--inputName" type="text" id="name" />
-          <label class="section__form--email" for="email">EMAIL</label>
-          <input class="section__form--inputEmail" type="text" id="email" />
-        </div>
-        <div class="section__consent">
-          <input class="section__consent--input" type="checkbox" />
-
-          <p class="section__consent--text">
-            I hereby give consent for my personal data included in my
-            application to be processed for the purposes of the recruitment
-            process under the European Parliament’s and Council of the European
-            Union Regulation on the Protection of Natural Persons as of 27 April
-            2016, with regard to the processing of personal data and on the free
-            movement of such data, and repealing Directive 95/46/EC (Data
-            Protection Directive)
+          <h1 class="section__title section__title--four">Any questions?</h1>
+          <p class="section__paragraph section__paragraph--four">
+            Leave your email address or call us!
           </p>
+          <div>
+            <div class="section__email">
+              <img src="resources/images/envelop-icon.png" alt="envelop icon" />
+              <p>info@bestshop.xyz</p>
+            </div>
+            <div class="section__phone">
+              <img src="resources/images/phone-icon.png" alt="phone icon" />
+              <p>123 456 789</p>
+            </div>
+          </div>
         </div>
-        <button class="btn btn--blue btn--blue--right btn--medium">Send</button>
+        <div>
+          <div class="section__form">
+            <label class="section__form--name" for="name">NAME</label>
+            <input class="section__form--inputName" type="text" id="name" />
+            <label class="section__form--email" for="email">EMAIL</label>
+            <input class="section__form--inputEmail" type="text" id="email" />
+          </div>
+          <div class="section__consent">
+            <input class="section__consent--input" type="checkbox" />
+
+            <p class="section__consent--text">
+              I hereby give consent for my personal data included in my
+              application to be processed for the purposes of the recruitment
+              process under the European Parliament’s and Council of the
+              European Union Regulation on the Protection of Natural Persons as
+              of 27 April 2016, with regard to the processing of personal data
+              and on the free movement of such data, and repealing Directive
+              95/46/EC (Data Protection Directive)
+            </p>
+          </div>
+          <button class="btn btn--blue btn--blue--right btn--medium">
+            Send
+          </button>
+        </div>
       </section>
     </main>
 

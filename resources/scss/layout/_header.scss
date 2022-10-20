@@ -3,42 +3,25 @@
 @import "../abstracts/variables";
 @import "../core/typography";
 
-.header {
-  width: 100%;
-  height: 70px;
-  left: 0%;
-  top: 0%;
+.nav {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
-
-  & nav {
-    display: none;
-    @include mq.desktop {
-      // Make it visible while hidding the menu icon
-      display: inline-block;
-      position: relative;
-      float: right;
-      width: 50%;
-      padding-right: 50px;
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 0.6875rem;
-      line-height: 0.9375rem;
-      text-align: center;
-      letter-spacing: 0.205rem;
-      text-transform: uppercase;
-      color: $light-grey-color;
-      top: 50%;
-      transform: translateY(-50%);
-      & ul {
-        list-style: none;
-        display: flex;
-        justify-content: space-around;
-      }
-    }
+  height: 70px;
+  &__container {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.6875rem;
+    line-height: 0.9375rem;
+    letter-spacing: 0.205rem;
+    text-transform: uppercase;
+    display: flex;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
   }
-  &__title {
-    display: inline-block;
+  &__logo {
     font-family: $raleway-font;
     color: $main-blue-color;
     font-style: normal;
@@ -46,20 +29,69 @@
     font-size: 2rem;
     // With line-height I achieve the h1 to be vertically centered
     line-height: 4.375rem;
-    padding-left: 10%;
     @include mq.desktop {
       font-weight: 300;
     }
   }
-  &__img {
-    width: 20px;
-    height: 12px;
-    margin-right: 5%;
-    // Position to the right and vertically centered
-    float: right;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+  &__menu {
+    // The normal text menu shows by default
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3em;
+    // Only if non desktop (=mobile) then I hide the menu until :checked (which applies for mobiles only as otherwise the burger icon is hidden
+    @include mq.nondesktop {
+      display: none;
+    }
+  }
+  &__item {
+    color: $light-grey-color;
+    text-decoration: none;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  &__item::after {
+    content: "";
+    display: block;
+    background: $main-blue-color;
+    width: 95%;
+    height: 3px;
+    margin-top: 3px;
+
+    clip-path: var(--clippy);
+    transition: clip-path 0.3s;
+    @include mq.nondesktop {
+      width: 75px;
+    }
+  }
+  &__item:hover {
+    --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    color: black;
+  }
+  &__input:checked + &__menu {
+    position: fixed;
+    top: 70px;
+    bottom: 0;
+    width: 100%;
+    height: 175px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0 5%;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.29);
+    // Clip-path just add an animation to display the menu
+    // clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    // transition: clip-path 0.3s ease-in-out;
+  }
+  &__input {
+    display: none;
+  }
+  &__label {
+    display: block;
+    cursor: pointer;
+
+    // Hiding the hamburger icon on desktop
     @include mq.desktop {
       display: none;
     }
