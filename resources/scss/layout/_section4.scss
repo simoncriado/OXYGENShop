@@ -3,6 +3,7 @@
 @import "../abstracts/variables";
 @import "../core/typography";
 
+// Styles for the Contact section
 .section {
   width: 100%;
   left: 0%;
@@ -141,9 +142,6 @@
   }
   &__consent {
     margin-top: 31px;
-    @include mq.desktop {
-      // max-width: 60%;
-    }
     &--input {
       width: 24px;
       height: 24px;
@@ -158,12 +156,9 @@
       font-family: $open-sans-font;
       font-style: normal;
       font-weight: 400;
-      font-size: 12px;
-      line-height: 16px;
+      font-size: 0.75rem;
+      line-height: 1rem;
       color: #707070;
-      @include mq.desktop {
-        // max-width: 60%;
-      }
     }
   }
 }

@@ -3,14 +3,13 @@
 @import "../abstracts/variables";
 @import "../core/typography";
 
+// Styles for the Benefits cards section
 .section {
   width: 100%;
   left: 0%;
   top: 0%;
   text-align: center;
   &--two {
-    // I think the fixed height is not needed anymore. Maybe change it for min-height in case needed at some point
-    // height: 1395px;
     background-color: $light-grey-background-color;
     padding-top: 2.625rem;
     @include mq.desktop {
@@ -28,6 +27,52 @@
     @include mq.desktop {
       width: 75%;
     }
+
+    // Shared card styles
+    &--red,
+    &--blue,
+    &--green {
+      & h3 {
+        text-align: left;
+        font-family: $raleway-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.875rem;
+        line-height: 2.1875rem;
+        padding: 25px 0 0 20px;
+        @include mq.desktop {
+          max-width: 80%;
+          font-size: 2.25rem;
+          line-height: 2.625rem;
+        }
+      }
+      & p {
+        text-align: left;
+        font-family: $open-sans-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.3125rem;
+        padding: 20px 20px 0 20px;
+        @include mq.desktop {
+          max-width: 80%;
+          font-size: 1rem;
+          line-height: 22px;
+          // Position relative so that the underline can be placed correctly
+          position: relative;
+        }
+      }
+      p:before {
+        @include mq.desktop {
+          content: "";
+          position: absolute;
+          width: 65%;
+          height: 1px;
+          bottom: 0;
+        }
+      }
+    }
+
     &--red {
       min-height: 370px;
       @include mq.desktop {
@@ -43,44 +88,17 @@
         z-index: 99;
       }
       & h3 {
-        text-align: left;
-        font-family: $raleway-font;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1.875rem;
-        line-height: 2.1875rem;
-        padding: 25px 0 0 20px;
         @include mq.desktop {
-          max-width: 80%;
-          font-size: 2.25rem;
-          line-height: 2.625rem;
           padding: 25px 0 0 15%;
         }
       }
       & p {
-        text-align: left;
-        font-family: $open-sans-font;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 0.875rem;
-        line-height: 1.3125rem;
-        padding: 20px 20px 0 20px;
         @include mq.desktop {
-          max-width: 80%;
-          font-size: 1rem;
-          line-height: 22px;
           padding: 30px 21px 50px 15%;
-          // display: inline-block;
-          position: relative;
         }
       }
       p:before {
         @include mq.desktop {
-          content: "";
-          position: absolute;
-          width: 65%;
-          height: 1px;
-          bottom: 0;
           border-bottom: 3px solid $main-red-color;
         }
       }
@@ -100,44 +118,17 @@
         z-index: 99;
       }
       & h3 {
-        text-align: left;
-        font-family: $raleway-font;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1.875rem;
-        line-height: 2.1875rem;
-        padding: 25px 0 0 20px;
         @include mq.desktop {
-          max-width: 80%;
-          font-size: 2.25rem;
-          line-height: 2.625rem;
           padding: 25px 15% 0 20px;
         }
       }
       & p {
-        text-align: left;
-        font-family: $open-sans-font;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 0.875rem;
-        line-height: 1.3125rem;
-        padding: 20px 20px 0 20px;
         @include mq.desktop {
-          max-width: 80%;
-          font-size: 1rem;
-          line-height: 22px;
           padding: 30px 5% 50px 21px;
-          // display: inline-block;
-          position: relative;
         }
       }
       p:before {
         @include mq.desktop {
-          content: "";
-          position: absolute;
-          width: 65%;
-          height: 1px;
-          bottom: 0;
           border-bottom: 3px solid $main-blue-color;
         }
       }
@@ -145,7 +136,6 @@
     &--green {
       height: 298px;
       margin-bottom: 0;
-      box-sizing: border-box;
       @include mq.desktop {
         display: flex;
         flex-direction: column;
@@ -155,44 +145,17 @@
         margin: 0;
       }
       & h3 {
-        text-align: left;
-        font-family: $raleway-font;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1.875rem;
-        line-height: 2.1875rem;
-        padding: 25px 0 0 20px;
         @include mq.desktop {
-          max-width: 80%;
-          font-size: 2.25rem;
-          line-height: 2.625rem;
           padding: 0 0 0 10%;
         }
       }
       & p {
-        text-align: left;
-        font-family: $open-sans-font;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 0.875rem;
-        line-height: 1.3125rem;
-        padding: 20px 20px 0 20px;
         @include mq.desktop {
-          max-width: 80%;
-          font-size: 1rem;
-          line-height: 22px;
           padding: 30px 21px 50px 10%;
-          // display: inline-block;
-          position: relative;
         }
       }
       p:before {
         @include mq.desktop {
-          content: "";
-          position: absolute;
-          width: 65%;
-          height: 1px;
-          bottom: 0;
           border-bottom: 3px solid $main-green-color;
         }
       }
@@ -209,8 +172,12 @@
     display: inline-block;
     border-radius: 50%;
     text-align: center;
+
     &--red {
       background-color: $main-red-color;
+      & div {
+        position: relative;
+      }
       &--big {
         position: absolute;
         width: 90px;
@@ -220,31 +187,28 @@
         left: 51%;
         margin-top: 15px;
         @include mq.desktop {
-          position: relative;
-          display: inline-block;
           width: 180px;
           height: 180px;
-          left: 40px;
-          top: 60px;
-          margin-top: 0;
+          margin-top: -30px;
+          margin-left: 10%;
         }
       }
     }
     &--blue {
       background-color: $main-blue-color;
+      & div {
+        position: relative;
+      }
       &--big {
         position: absolute;
         width: 131px;
         height: 131px;
         margin-top: 12px;
         @include mq.desktop {
-          position: relative;
-          display: inline-block;
           width: 320px;
           height: 320px;
-          left: 0;
-          bottom: -145px;
-          margin-top: 0;
+          margin-top: -15px;
+          margin-left: 0%;
         }
       }
     }
@@ -273,6 +237,7 @@
     top: 0;
   }
   & .img--green {
+    // Position is supposed to be absolute for this element... but I can position it much easier if relative??
     position: relative;
     left: -5%;
     padding-top: 30px;
@@ -291,16 +256,14 @@
       width: 300px;
       height: 185px;
       margin-left: 10%;
-      bottom: 60px;
     }
   }
   &--blue {
     @include mq.desktop {
       display: inline-block;
-      width: 295px;
-      height: 295px;
+      width: 300px;
+      height: 300px;
       margin-left: 10%;
-      bottom: 130px;
     }
   }
 }

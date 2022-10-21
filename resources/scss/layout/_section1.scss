@@ -3,6 +3,7 @@
 @import "../abstracts/variables";
 @import "../core/typography";
 
+// Styles for the Why Us section
 .section {
   width: 100%;
   left: 0%;
@@ -10,8 +11,6 @@
   text-align: center;
 
   &--one {
-    // I think the fixed height is not needed anymore. Maybe change it for min-height in case needed at some point
-    // height: 1300px;
     // overflow hidden because otherwise the banner img deforms the whole page
     overflow: hidden;
   }
