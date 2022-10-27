@@ -94,11 +94,39 @@
         }
       }
     }
+    &--red:hover{
+      @include mq.desktop {
+        width: 90%;
+        height: 277px;
+        min-width: 350px;
+        min-height: 500px;
+        box-shadow: 5px 10px 27px rgba(251, 59, 100, 0.29);
+        
+      }
+    }
+    &--blue:hover{
+      @include mq.desktop {
+        width: 90%;
+        height: 277px;
+        min-width: 350px;
+        min-height: 500px;
+        box-shadow: 5px 10px 27px rgba(7, 172, 230, 0.29);
+      }
+    }
+    &--green:hover{
+      @include mq.desktop {
+        width: 90%;
+        height: 277px;
+        min-width: 350px;
+        min-height: 500px;
+        box-shadow: 5px 10px 27px rgba(85, 223, 180, 0.29);
+      }
+    }
     &--red {
       width: 80%;
       height: 251px;
-
       border: 1px solid $main-red-color;
+      transition: all 0.2s ease-in-out;
       @include mq.desktop {
         min-width: 300px;
         min-height: 460px;
@@ -108,13 +136,13 @@
       }
     }
     &--blue {
-      width: 90%;
-      height: 277px;
+      width: 80%;
+      height: 251px;
       border: 1px solid $secondary-blue-color;
-      box-shadow: 5px 10px 27px rgba(7, 172, 230, 0.29);
+      transition: all 0.2s ease-in-out;
       @include mq.desktop {
-        min-width: 350px;
-        min-height: 500px;
+        min-width: 300px;
+        min-height: 460px;
       }
       & h2 {
         color: $secondary-blue-color;
@@ -131,6 +159,7 @@
       width: 80%;
       height: 251px;
       border: 1px solid $main-green-color;
+      transition: all 0.2s ease-in-out;
       @include mq.desktop {
         min-width: 300px;
         min-height: 460px;

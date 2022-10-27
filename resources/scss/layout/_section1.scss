@@ -21,10 +21,12 @@
       font-weight: 400;
       font-size: 2.1875rem;
       line-height: 2.5625rem;
-      padding-top: 100px;
+      padding-top: 120px;
       @include mq.desktop {
         font-size: 3.0625rem;
         line-height: 3.5625rem;
+      padding-top: 200px;
+
       }
     }
   }

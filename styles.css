@@ -15,6 +15,11 @@
 .nav {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
   height: 70px;
+  background-color: white;
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 .nav__container {
   font-family: "Open Sans";
@@ -121,12 +126,13 @@
   font-weight: 400;
   font-size: 2.1875rem;
   line-height: 2.5625rem;
-  padding-top: 100px;
+  padding-top: 120px;
 }
 @media all and (min-width: 960px) {
   .section__title--one {
     font-size: 3.0625rem;
     line-height: 3.5625rem;
+    padding-top: 200px;
   }
 }
 .section__paragraph--one {
@@ -325,7 +331,7 @@
 }
 .section__card--red img {
   position: relative;
-  z-index: 99;
+  z-index: 90;
 }
 @media all and (min-width: 960px) {
   .section__card--red h3 {
@@ -357,7 +363,7 @@
 }
 .section__card--blue img {
   position: relative;
-  z-index: 99;
+  z-index: 90;
 }
 @media all and (min-width: 960px) {
   .section__card--blue h3 {
@@ -623,10 +629,38 @@
   font-size: 0.875rem;
   line-height: 1.1875rem;
 }
+@media all and (min-width: 960px) {
+  .section__price--red:hover {
+    width: 90%;
+    height: 277px;
+    min-width: 350px;
+    min-height: 500px;
+    box-shadow: 5px 10px 27px rgba(251, 59, 100, 0.29);
+  }
+}
+@media all and (min-width: 960px) {
+  .section__price--blue:hover {
+    width: 90%;
+    height: 277px;
+    min-width: 350px;
+    min-height: 500px;
+    box-shadow: 5px 10px 27px rgba(7, 172, 230, 0.29);
+  }
+}
+@media all and (min-width: 960px) {
+  .section__price--green:hover {
+    width: 90%;
+    height: 277px;
+    min-width: 350px;
+    min-height: 500px;
+    box-shadow: 5px 10px 27px rgba(85, 223, 180, 0.29);
+  }
+}
 .section__price--red {
   width: 80%;
   height: 251px;
   border: 1px solid #fb3b64;
+  transition: all 0.2s ease-in-out;
 }
 @media all and (min-width: 960px) {
   .section__price--red {
@@ -638,15 +672,15 @@
   color: #fb3b64;
 }
 .section__price--blue {
-  width: 90%;
-  height: 277px;
+  width: 80%;
+  height: 251px;
   border: 1px solid #07ace6;
-  box-shadow: 5px 10px 27px rgba(7, 172, 230, 0.29);
+  transition: all 0.2s ease-in-out;
 }
 @media all and (min-width: 960px) {
   .section__price--blue {
-    min-width: 350px;
-    min-height: 500px;
+    min-width: 300px;
+    min-height: 460px;
   }
 }
 .section__price--blue h2 {
@@ -663,6 +697,7 @@
   width: 80%;
   height: 251px;
   border: 1px solid #55dfb4;
+  transition: all 0.2s ease-in-out;
 }
 @media all and (min-width: 960px) {
   .section__price--green {
