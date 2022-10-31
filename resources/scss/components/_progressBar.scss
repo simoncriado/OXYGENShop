@@ -1,0 +1,9 @@
+@import "../abstracts/variables";
+
+// Styles for the Progress Bar
+.progressBar{
+    position: relative;
+    width: 0%;
+    height: 10px;
+    background-image: linear-gradient(to right, #08a6e4, #00b7e4, #00c7da, #00d4c9, #55dfb4);
+}

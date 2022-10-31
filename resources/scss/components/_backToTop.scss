@@ -1,0 +1,19 @@
+@import "../abstracts/variables";
+
+// Styles for the Back To Top Button
+.backToTop{
+  position: fixed;
+  bottom: 65px;
+  right: 10px;
+  height: 50px;
+  width: 50px;
+  place-items: center;
+  border-radius: 50%;
+  font-size: larger;
+  font-weight: 900;
+  display: none;
+  background-image: linear-gradient(to right, #08a6e4, #00b7e4, #00c7da, #00d4c9, #55dfb4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-style: none;
+  cursor: pointer;
+}

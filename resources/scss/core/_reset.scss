@@ -2,6 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  // This is for the back to Top Button to do it smoothly
+  scroll-behavior: smooth;
 }
 body {
   min-width: 320px;
