@@ -285,7 +285,11 @@
             <input class="section__form--inputEmail" type="text" id="email" />
           </div>
           <div class="section__consent">
-            <input class="section__consent--input" type="checkbox" />
+            <input
+              class="section__consent--input"
+              type="checkbox"
+              id="checkbox"
+            />
 
             <p class="section__consent--text">
               I hereby give consent for my personal data included in my
@@ -297,10 +301,32 @@
               95/46/EC (Data Protection Directive)
             </p>
           </div>
-          <button class="btn btn--blue btn--blue--right btn--medium">
+          <button
+            id="submitBtn"
+            class="btn btn--blue btn--blue--right btn--medium"
+          >
             Send
           </button>
           <button id="backToTop" class="backToTop">&#8679;</button>
+        </div>
+      </section>
+
+      <!-- Section Modal -->
+      <section id="modal" class="section modal">
+        <div class="modal__container">
+          <button id="closeBtn" class="closeBtn">&#10006;</button>
+          <h2>Subscribe to our Newsletter</h2>
+          <input
+            class="section__form--inputEmail"
+            type="text"
+            id="emailModal"
+          />
+          <button
+            id="modalSubmitBtn"
+            class="btn btn--blue btn--blue--centered btn--medium"
+          >
+            Send
+          </button>
         </div>
       </section>
     </main>

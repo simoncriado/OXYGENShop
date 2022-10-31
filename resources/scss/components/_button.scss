@@ -17,40 +17,51 @@
     background-color: $secondary-blue-color;
     box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
     margin-top: 30px;
+
     &--inline {
       margin-top: 0px;
       margin-left: 0;
       position: relative;
       top: -25px;
     }
+
     &--right {
       position: relative;
       float: right;
       margin-bottom: 44px;
     }
+
+    &--centered {
+      margin: 0 auto;
+    }
   }
+
   &--red {
     z-index: 10;
     display: inline-block;
     border-style: none;
     background-color: $secondary-red-color;
+
     &--inline {
       margin-left: 0;
       position: relative;
       top: -25px;
     }
   }
+
   &--green {
     z-index: 10;
     display: inline-block;
     border-style: none;
     background-color: $main-green-color;
+
     &--inline {
       margin-left: 0;
       position: relative;
       top: -25px;
     }
   }
+
   &--big {
     height: 67px;
     line-height: 138%;
@@ -59,6 +70,7 @@
     font-size: 16px;
     box-shadow: none;
   }
+
   &--small {
     height: 50px;
     line-height: 18px;
@@ -66,6 +78,7 @@
     border-radius: 23px;
     font-size: 13px;
   }
+
   &--medium {
     height: 57px;
     line-height: 18px;

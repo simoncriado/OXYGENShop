@@ -12,6 +12,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .nav {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
   height: 70px;
@@ -829,6 +831,7 @@
   border: none;
   border-bottom: 1px solid #95989a;
   line-height: 40px;
+  outline: none;
   cursor: pointer;
 }
 .section__form--email {
@@ -846,6 +849,7 @@
   border: none;
   border-bottom: 1px solid #95989a;
   line-height: 40px;
+  outline: none;
   cursor: pointer;
 }
 .section__consent {
@@ -927,6 +931,9 @@
   float: right;
   margin-bottom: 44px;
 }
+.btn--blue--centered {
+  margin: 0 auto;
+}
 .btn--red {
   z-index: 10;
   display: inline-block;
@@ -994,6 +1001,63 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-style: none;
   cursor: pointer;
+}
+
+.modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+}
+.modal__container {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.9375rem;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  height: 60%;
+  margin: 30% auto;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+@media all and (min-width: 960px) {
+  .modal__container {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2.9375rem;
+    width: 60%;
+    height: 40%;
+    margin: 10% auto;
+  }
+}
+.modal__container .closeBtn {
+  all: unset;
+  height: 30px;
+  width: 30px;
+  align-self: flex-end;
+  font-size: 1.5rem;
+  color: #08a6e4;
+}
+.modal__container input {
+  width: 70%;
+  margin: 0 auto;
+}
+.modal__container .btn--blue--centered {
+  width: 40%;
 }
 
 * {
