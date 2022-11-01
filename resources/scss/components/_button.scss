@@ -15,7 +15,6 @@
     display: inline-block;
     border-style: none;
     background-color: $secondary-blue-color;
-    box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
     margin-top: 30px;
 
     &--inline {
@@ -36,6 +35,10 @@
     }
   }
 
+  &--blue:hover {
+    box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
+  }
+
   &--red {
     z-index: 10;
     display: inline-block;
@@ -47,6 +50,10 @@
       position: relative;
       top: -25px;
     }
+  }
+
+  &--red:hover {
+    box-shadow: 5px 10px 14px rgba(251, 59, 100, 0.29)
   }
 
   &--green {
@@ -62,13 +69,16 @@
     }
   }
 
+  &--green:hover {
+    box-shadow: 5px 10px 14px rgba(85, 223, 180, 0.29)
+  }
+
   &--big {
     height: 67px;
     line-height: 138%;
     padding: 21px 91px 21px 91px;
     border-radius: 40px;
     font-size: 16px;
-    box-shadow: none;
   }
 
   &--small {

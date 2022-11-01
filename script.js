@@ -1,5 +1,4 @@
-// Scroll Bar & Back To Top Scripts
-
+// SCROLL BAR & BACK TO TOP SCRIPTS
 const body = document.body;
 const html = document.documentElement;
 const bodyHeight = Math.max(
@@ -19,7 +18,7 @@ const backToTopButton = document.getElementById("backToTop");
 
 const calculateCurrentScroll = () => {
   let currentUserPosition = window.pageYOffset;
-  // If bodyHeight should be the 100% of the progressBar. Let´s calculate the percent based on the currentUserPosition
+  // If bodyHeight is equal to 100% of the progressBar. Let´s calculate the percent based on the currentUserPosition
   let currentPercent =
     // I substract the windowHeight to the bodyHeight because otherwise the currentPercent would never reach the 100%
     (currentUserPosition * 100) / (bodyHeight - windowHeight);
@@ -31,7 +30,7 @@ const progressBar = (currentPercent) => {
   scrollBar.style.width = currentPercent + "%";
 };
 
-// Display backToTop button if at the bottom of the page
+// Display backToTop button if the user is at the bottom of the page
 const displayBackToTop = (currentPercent) => {
   if (currentPercent > 99) {
     backToTopButton.style.display = "block";
@@ -39,10 +38,16 @@ const displayBackToTop = (currentPercent) => {
     backToTopButton.style.display = "none";
   }
 };
+// When clicked we get scrolled to the top of the page. Smoothly because of the rule I set in the reset.scss
 const backToTop = () => {
   window.scroll(0, 0);
 };
+// When backToTop button clicked it sends us to top: 0 after a delay of 200ml
+backToTopButton.addEventListener("click", function () {
+  setTimeout(backToTop, 200);
+});
 
+// I faced this issue before where I wasn´t able to upload the page to Netlify without this if-check
 if (typeof window !== `undefined`) {
   window.addEventListener("scroll", () => {
     progressBar(calculateCurrentScroll());
@@ -58,12 +63,7 @@ if (typeof window !== `undefined`) {
   });
 }
 
-// When backToTop button clicked it sends us to top: 0 after a delay of 200ml
-backToTopButton.addEventListener("click", function () {
-  setTimeout(backToTop, 200);
-});
-
-// Form Validation & Testing scripts
+// FORM VALIDATION & TESTING SCRIPTS
 const inputName = document.getElementById("name");
 let isNameValid;
 
@@ -125,7 +125,7 @@ submitBtn.addEventListener("click", () => {
   }
 });
 
-// Modal email testing and sending POST
+// MODAL EMAIL TESTING & SENDING POST
 const modal = document.getElementById("modal");
 const emailModal = document.getElementById("emailModal");
 const closeModal = document.getElementById("closeBtn");
@@ -158,7 +158,6 @@ const closeKeyDispatcher = (e) => {
 // If we would click the modal__container... userClick would NOT be equal to modal and then nothing would happen.
 document.addEventListener("click", (e) => {
   let userClick = e.target;
-  console.log(userClick);
   if (userClick == modal) {
     modal.style.display = "none";
   }
@@ -166,27 +165,30 @@ document.addEventListener("click", (e) => {
 
 const openModal = () => {
   isModalCurrentlyOpened = true;
-  wasModalAlreadyOpened = true;
+  localStorage.setItem("wasModalAlreadyOpened", "true");
   modal.style.display = "block";
 };
 
 let isModalCurrentlyOpened = false;
-let wasModalAlreadyOpened = false;
 // If scroll more than 25% AND the modal was not yet opened AND is not currently opened... it is displayed
 window.addEventListener("scroll", () => {
   if (
     calculateCurrentScroll() > 25 &&
-    !wasModalAlreadyOpened &&
+    localStorage.getItem("wasModalAlreadyOpened") !== "true" &&
     !isModalCurrentlyOpened
   ) {
     openModal();
+    // Here I activate the eventListener for closing the modal when pressing ESC
     document.addEventListener("keydown", (e) => closeKeyDispatcher(e));
   }
 });
 // If the user did not scroll more than 25% and the modal was not yet opened and it is not currently opened... after 5s the modal is displayed
 window.addEventListener("load", () => {
   setTimeout(() => {
-    if (!wasModalAlreadyOpened && !isModalCurrentlyOpened) {
+    if (
+      localStorage.getItem("wasModalAlreadyOpened") !== "true" &&
+      !isModalCurrentlyOpened
+    ) {
       openModal();
       document.addEventListener("keydown", (e) => closeKeyDispatcher(e));
     }
@@ -194,8 +196,6 @@ window.addEventListener("load", () => {
 });
 
 const modalSubmitBtn = document.getElementById("modalSubmitBtn");
-
-// CHANGE THIS SO THAT THE FORM GETS SENT IF THE BOTTON IS CLICKED OR IF THE ENTER KEY IS PRESSED!!!
 
 modalSubmitBtn.addEventListener("click", () => {
   if (isEmailModalValid) {

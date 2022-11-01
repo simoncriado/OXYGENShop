@@ -917,7 +917,6 @@
   display: inline-block;
   border-style: none;
   background-color: #07ace6;
-  box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
   margin-top: 30px;
 }
 .btn--blue--inline {
@@ -934,6 +933,9 @@
 .btn--blue--centered {
   margin: 0 auto;
 }
+.btn--blue:hover {
+  box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
+}
 .btn--red {
   z-index: 10;
   display: inline-block;
@@ -944,6 +946,9 @@
   margin-left: 0;
   position: relative;
   top: -25px;
+}
+.btn--red:hover {
+  box-shadow: 5px 10px 14px rgba(251, 59, 100, 0.29);
 }
 .btn--green {
   z-index: 10;
@@ -956,13 +961,15 @@
   position: relative;
   top: -25px;
 }
+.btn--green:hover {
+  box-shadow: 5px 10px 14px rgba(85, 223, 180, 0.29);
+}
 .btn--big {
   height: 67px;
   line-height: 138%;
   padding: 21px 91px 21px 91px;
   border-radius: 40px;
   font-size: 16px;
-  box-shadow: none;
 }
 .btn--small {
   height: 50px;
