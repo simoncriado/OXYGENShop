@@ -9,6 +9,7 @@
   left: 0%;
   top: 0%;
   text-align: center;
+
   &__title {
     &--three {
       font-family: $raleway-font;
@@ -17,6 +18,7 @@
       font-size: 2.1875rem;
       line-height: 2.5625rem;
       padding-top: 53px;
+
       @include mq.desktop {
         font-size: 2.25rem;
         line-height: 2.625rem;
@@ -24,6 +26,47 @@
       }
     }
   }
+
+  &__currency {
+    font-family: $open-sans-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 144%;
+    padding: 20px 10% 0 10%;
+    margin-bottom: 20px;
+
+    @include mq.desktop {
+      margin-bottom: 0px;
+    }
+
+    &--dolar,
+    &--euro,
+    &--pound {
+      cursor: pointer;
+      height: 40px;
+      width: 10px;
+      line-height: 20px;
+      padding: 8px 20px 8px 10px;
+      margin-top: 10px;
+      margin-right: 5px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      border: 1px solid $main-blue-color;
+      background-color: white;
+    }
+
+    &--dolar:hover,
+    &--euro:hover,
+    &--pound:hover {
+      box-shadow: 5px 10px 27px rgba(7, 172, 230, 0.29);
+    }
+
+    & .active {
+      background-color: rgba(7, 172, 230, 0.29);
+    }
+  }
+
   @include mq.desktop {
     .pricesList {
       min-height: 700px;
@@ -43,47 +86,57 @@
     width: 100%;
     border-radius: 18px;
     margin: auto;
+
     @include mq.desktop {
       flex-direction: column;
     }
+
     &--red,
     &--blue,
     &--green {
       margin-top: 14px;
+
       & h1 {
         font-family: $raleway-font;
         font-style: normal;
         font-weight: 700;
         font-size: 1.25rem;
         line-height: 1.5rem;
+
         @include mq.desktop {
           padding-top: 40px;
         }
       }
+
       & h2 {
         font-family: $open-sans-font;
         font-style: normal;
         font-weight: 300;
-        font-size: 2.875rem;
+        font-size: 2.5rem;
         line-height: 4rem;
       }
+
       & .list {
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         padding: 25px 0 50px 0;
+
         & div {
           display: flex;
           vertical-align: middle;
+
           @include mq.desktop {
             justify-content: center;
           }
+
           & img {
             height: 0.6875rem;
             width: 0.6875rem;
             margin: auto 10px auto 0;
           }
+
           & p {
             font-family: $open-sans-font;
             font-style: normal;
@@ -94,17 +147,19 @@
         }
       }
     }
-    &--red:hover{
+
+    &--red:hover {
       @include mq.desktop {
         width: 90%;
         height: 277px;
         min-width: 350px;
         min-height: 500px;
         box-shadow: 5px 10px 27px rgba(251, 59, 100, 0.29);
-        
+
       }
     }
-    &--blue:hover{
+
+    &--blue:hover {
       @include mq.desktop {
         width: 90%;
         height: 277px;
@@ -113,7 +168,8 @@
         box-shadow: 5px 10px 27px rgba(7, 172, 230, 0.29);
       }
     }
-    &--green:hover{
+
+    &--green:hover {
       @include mq.desktop {
         width: 90%;
         height: 277px;
@@ -122,31 +178,38 @@
         box-shadow: 5px 10px 27px rgba(85, 223, 180, 0.29);
       }
     }
+
     &--red {
       width: 80%;
       height: 251px;
       border: 1px solid $main-red-color;
       transition: all 0.2s ease-in-out;
+
       @include mq.desktop {
         min-width: 300px;
         min-height: 460px;
       }
+
       & h2 {
         color: $main-red-color;
       }
     }
+
     &--blue {
       width: 80%;
       height: 251px;
       border: 1px solid $secondary-blue-color;
       transition: all 0.2s ease-in-out;
+
       @include mq.desktop {
         min-width: 300px;
         min-height: 460px;
       }
+
       & h2 {
         color: $secondary-blue-color;
       }
+
       & p {
         font-family: $raleway-font;
         font-style: normal;
@@ -155,18 +218,22 @@
         line-height: 0.875rem;
       }
     }
+
     &--green {
       width: 80%;
       height: 251px;
       border: 1px solid $main-green-color;
       transition: all 0.2s ease-in-out;
+
       @include mq.desktop {
         min-width: 300px;
         min-height: 460px;
       }
+
       & h2 {
         color: $main-green-color;
       }
+
       & p {
         font-family: $raleway-font;
         font-style: normal;

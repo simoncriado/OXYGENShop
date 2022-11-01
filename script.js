@@ -217,3 +217,208 @@ modalSubmitBtn.addEventListener("click", () => {
     window.alert("We need your E-Mail address to add you to our Newsletter!");
   }
 });
+
+// CURRENCY CONVERTER SCRIPTS
+// Targeting the buttons
+const btnUSD = document.getElementById("usd");
+const btnEUR = document.getElementById("eur");
+const btnGBP = document.getElementById("gbp");
+
+// Targeting the values to change
+const priceToChangeOne = document.getElementById("priceToChangeOne");
+const priceToChangeTwo = document.getElementById("priceToChangeTwo");
+const priceToChangeThree = document.getElementById("priceToChangeThree");
+
+const changeCurrencyInHTML = async (currency) => {
+  // Getting which is the currently displayed currency in the HTML
+  let currentCurrency;
+  if (priceToChangeOne.innerText.includes("$")) {
+    currentCurrency = "usd";
+  } else if (priceToChangeOne.innerText.includes("€")) {
+    currentCurrency = "eur";
+  } else {
+    currentCurrency = "gbp";
+  }
+  // Getting which is the new currency based on the user click
+  let newCurrency = currency;
+  // If the user clicks on USD
+  if (newCurrency == "usd.json") {
+    // Change from EUR to USD
+    if (currentCurrency == "eur") {
+      // Getting the exchange rate from EUR to USD, getting the current displayed value in the HTML and multiplying it by the exchange rate
+      const eurToUsd = await changeCurrency("eur/usd.json");
+      priceToChangeOne.innerText =
+        "$ " +
+        (
+          parseFloat(priceToChangeOne.innerText.replace(/[^0-9\.-]+/g, "")) *
+          eurToUsd.usd
+        ).toFixed(2);
+      priceToChangeTwo.innerText =
+        "$ " +
+        (
+          parseFloat(priceToChangeTwo.innerText.replace(/[^0-9\.-]+/g, "")) *
+          eurToUsd.usd
+        ).toFixed(2);
+      priceToChangeThree.innerText =
+        "$ " +
+        (
+          parseFloat(priceToChangeThree.innerText.replace(/[^0-9\.-]+/g, "")) *
+          eurToUsd.usd
+        ).toFixed(2);
+      // Change from GBP to USD
+    } else if (currentCurrency == "gbp") {
+      const gbpToUsd = await changeCurrency("gbp/usd.json");
+      priceToChangeOne.innerText =
+        "$ " +
+        (
+          parseFloat(priceToChangeOne.innerText.replace(/[^0-9\.-]+/g, "")) *
+          gbpToUsd.usd
+        ).toFixed(2);
+      priceToChangeTwo.innerText =
+        "$ " +
+        (
+          parseFloat(priceToChangeTwo.innerText.replace(/[^0-9\.-]+/g, "")) *
+          gbpToUsd.usd
+        ).toFixed(2);
+      priceToChangeThree.innerText =
+        "$ " +
+        (
+          parseFloat(priceToChangeThree.innerText.replace(/[^0-9\.-]+/g, "")) *
+          gbpToUsd.usd
+        ).toFixed(2);
+    }
+    // If the user clicks on EUR
+  } else if (newCurrency == "eur.json") {
+    // Change from USD to EUR
+    if (currentCurrency == "usd") {
+      const usdToEur = await changeCurrency("usd/eur.json");
+      priceToChangeOne.innerText =
+        "€ " +
+        (
+          parseFloat(priceToChangeOne.innerText.replace(/[^0-9\.-]+/g, "")) *
+          usdToEur.eur
+        ).toFixed(2);
+      priceToChangeTwo.innerText =
+        "€ " +
+        (
+          parseFloat(priceToChangeTwo.innerText.replace(/[^0-9\.-]+/g, "")) *
+          usdToEur.eur
+        ).toFixed(2);
+      priceToChangeThree.innerText =
+        "€ " +
+        (
+          parseFloat(priceToChangeThree.innerText.replace(/[^0-9\.-]+/g, "")) *
+          usdToEur.eur
+        ).toFixed(2);
+      // Change from GBP to EUR
+    } else if (currentCurrency == "gbp") {
+      const gbpToEur = await changeCurrency("gbp/eur.json");
+      priceToChangeOne.innerText =
+        "€ " +
+        (
+          parseFloat(priceToChangeOne.innerText.replace(/[^0-9\.-]+/g, "")) *
+          gbpToEur.eur
+        ).toFixed(2);
+      priceToChangeTwo.innerText =
+        "€ " +
+        (
+          parseFloat(priceToChangeTwo.innerText.replace(/[^0-9\.-]+/g, "")) *
+          gbpToEur.eur
+        ).toFixed(2);
+      priceToChangeThree.innerText =
+        "€ " +
+        (
+          parseFloat(priceToChangeThree.innerText.replace(/[^0-9\.-]+/g, "")) *
+          gbpToEur.eur
+        ).toFixed(2);
+    }
+    // If the user clicks on GBP
+  } else {
+    // Change from USD to GBP
+    if (currentCurrency == "usd") {
+      const usdToGbp = await changeCurrency("usd/gbp.json");
+      priceToChangeOne.innerText =
+        "£ " +
+        (
+          parseFloat(priceToChangeOne.innerText.replace(/[^0-9\.-]+/g, "")) *
+          usdToGbp.gbp
+        ).toFixed(2);
+      priceToChangeTwo.innerText =
+        "£ " +
+        (
+          parseFloat(priceToChangeTwo.innerText.replace(/[^0-9\.-]+/g, "")) *
+          usdToGbp.gbp
+        ).toFixed(2);
+      priceToChangeThree.innerText =
+        "£ " +
+        (
+          parseFloat(priceToChangeThree.innerText.replace(/[^0-9\.-]+/g, "")) *
+          usdToGbp.gbp
+        ).toFixed(2);
+      // Change from EUR to GBP
+    } else if (currentCurrency == "eur") {
+      const eurToGbp = await changeCurrency("eur/gbp.json");
+      priceToChangeOne.innerText =
+        "£ " +
+        (
+          parseFloat(priceToChangeOne.innerText.replace(/[^0-9\.-]+/g, "")) *
+          eurToGbp.gbp
+        ).toFixed(2);
+      priceToChangeTwo.innerText =
+        "£ " +
+        (
+          parseFloat(priceToChangeTwo.innerText.replace(/[^0-9\.-]+/g, "")) *
+          eurToGbp.gbp
+        ).toFixed(2);
+      priceToChangeThree.innerText =
+        "£ " +
+        (
+          parseFloat(priceToChangeThree.innerText.replace(/[^0-9\.-]+/g, "")) *
+          eurToGbp.gbp
+        ).toFixed(2);
+    }
+  }
+};
+
+// Fetching the exchange rate based on: what currency is currently displayed in the HTML and the currency that the user clicked
+const changeCurrency = async (currency) => {
+  const baseURL =
+    "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/";
+  const urlToFetch = baseURL + currency;
+
+  try {
+    const response = await fetch(urlToFetch);
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      return jsonResponse;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// Checking if the currency that the user clicks is not the currently selected one
+btnUSD.addEventListener("click", () => {
+  if (!btnUSD.classList.contains("active")) {
+    btnUSD.classList.add("active");
+    btnEUR.classList.remove("active");
+    btnGBP.classList.remove("active");
+    changeCurrencyInHTML("usd.json");
+  }
+});
+btnEUR.addEventListener("click", () => {
+  if (!btnEUR.classList.contains("active")) {
+    btnUSD.classList.remove("active");
+    btnEUR.classList.add("active");
+    btnGBP.classList.remove("active");
+    changeCurrencyInHTML("eur.json");
+  }
+});
+btnGBP.addEventListener("click", () => {
+  if (!btnGBP.classList.contains("active")) {
+    btnUSD.classList.remove("active");
+    btnEUR.classList.remove("active");
+    btnGBP.classList.add("active");
+    changeCurrencyInHTML("gbp.json");
+  }
+});

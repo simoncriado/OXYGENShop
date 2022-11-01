@@ -150,12 +150,18 @@
         <h1 class="section__title section__title--three">Pricing</h1>
         <div class="section__currency">
           <p>Select your currency</p>
-          <input type="radio" id="usd" name="usd" value="usd" />
-          <label for="us">$</label>
-          <input type="radio" id="eur" name="eur" value="eur" />
-          <label for="eur">€</label>
-          <input type="radio" id="gbp" name="gbp" value="gbp" />
-          <label for="gbp">£</label>
+          <button
+            id="usd"
+            class="section__currency section__currency--dolar active"
+          >
+            $
+          </button>
+          <button id="eur" class="section__currency section__currency--euro">
+            €
+          </button>
+          <button id="gbp" class="section__currency section__currency--pound">
+            £
+          </button>
         </div>
 
         <div class="pricesList">
@@ -164,7 +170,7 @@
             <div class="section__price section__price--red">
               <div>
                 <h1>Basic</h1>
-                <h2>$0</h2>
+                <h2 id="priceToChangeOne">$ 0</h2>
               </div>
               <div class="list">
                 <div>
@@ -199,7 +205,7 @@
             <div class="section__price section__price--blue">
               <div>
                 <h1>Professional</h1>
-                <h2>$25</h2>
+                <h2 id="priceToChangeTwo">$ 25</h2>
                 <p>Limited offer</p>
               </div>
               <div class="list">
@@ -235,7 +241,7 @@
             <div class="section__price section__price--green">
               <div>
                 <h1>Premium</h1>
-                <h2>$60</h2>
+                <h2 id="priceToChangeThree">$ 60</h2>
                 <p>Limited offer</p>
               </div>
               <div class="list">
