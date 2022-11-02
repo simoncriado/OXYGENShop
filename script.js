@@ -225,9 +225,11 @@ const btnEUR = document.getElementById("eur");
 const btnGBP = document.getElementById("gbp");
 
 // Targeting the values to change
-const priceToChangeOne = document.getElementById("priceToChangeOne");
-const priceToChangeTwo = document.getElementById("priceToChangeTwo");
-const priceToChangeThree = document.getElementById("priceToChangeThree");
+const pricesToChange = [
+  document.getElementById("priceToChangeOne"),
+  document.getElementById("priceToChangeTwo"),
+  document.getElementById("priceToChangeThree"),
+];
 
 const changeCurrencyInHTML = async (currency) => {
   // Getting which is the currently displayed currency in the HTML
@@ -247,135 +249,75 @@ const changeCurrencyInHTML = async (currency) => {
     if (currentCurrency == "eur") {
       // Getting the exchange rate from EUR to USD, getting the current displayed value in the HTML and multiplying it by the exchange rate
       const eurToUsd = await changeCurrency("eur/usd.json");
-      priceToChangeOne.innerText =
-        "$ " +
-        (
-          parseFloat(priceToChangeOne.innerText.replace(/[^0-9\.-]+/g, "")) *
-          eurToUsd.usd
-        ).toFixed(2);
-      priceToChangeTwo.innerText =
-        "$ " +
-        (
-          parseFloat(priceToChangeTwo.innerText.replace(/[^0-9\.-]+/g, "")) *
-          eurToUsd.usd
-        ).toFixed(2);
-      priceToChangeThree.innerText =
-        "$ " +
-        (
-          parseFloat(priceToChangeThree.innerText.replace(/[^0-9\.-]+/g, "")) *
-          eurToUsd.usd
-        ).toFixed(2);
+      pricesToChange.forEach((price) => {
+        price.innerText =
+          "$ " +
+          (
+            parseFloat(price.innerText.replace(/[^0-9\.-]+/g, "")) *
+            eurToUsd.usd
+          ).toFixed(2);
+      });
       // Change from GBP to USD
     } else if (currentCurrency == "gbp") {
       const gbpToUsd = await changeCurrency("gbp/usd.json");
-      priceToChangeOne.innerText =
-        "$ " +
-        (
-          parseFloat(priceToChangeOne.innerText.replace(/[^0-9\.-]+/g, "")) *
-          gbpToUsd.usd
-        ).toFixed(2);
-      priceToChangeTwo.innerText =
-        "$ " +
-        (
-          parseFloat(priceToChangeTwo.innerText.replace(/[^0-9\.-]+/g, "")) *
-          gbpToUsd.usd
-        ).toFixed(2);
-      priceToChangeThree.innerText =
-        "$ " +
-        (
-          parseFloat(priceToChangeThree.innerText.replace(/[^0-9\.-]+/g, "")) *
-          gbpToUsd.usd
-        ).toFixed(2);
+      pricesToChange.forEach((price) => {
+        price.innerText =
+          "$ " +
+          (
+            parseFloat(price.innerText.replace(/[^0-9\.-]+/g, "")) *
+            gbpToUsd.usd
+          ).toFixed(2);
+      });
     }
     // If the user clicks on EUR
   } else if (newCurrency == "eur.json") {
     // Change from USD to EUR
     if (currentCurrency == "usd") {
       const usdToEur = await changeCurrency("usd/eur.json");
-      priceToChangeOne.innerText =
-        "€ " +
-        (
-          parseFloat(priceToChangeOne.innerText.replace(/[^0-9\.-]+/g, "")) *
-          usdToEur.eur
-        ).toFixed(2);
-      priceToChangeTwo.innerText =
-        "€ " +
-        (
-          parseFloat(priceToChangeTwo.innerText.replace(/[^0-9\.-]+/g, "")) *
-          usdToEur.eur
-        ).toFixed(2);
-      priceToChangeThree.innerText =
-        "€ " +
-        (
-          parseFloat(priceToChangeThree.innerText.replace(/[^0-9\.-]+/g, "")) *
-          usdToEur.eur
-        ).toFixed(2);
+      pricesToChange.forEach((price) => {
+        price.innerText =
+          "€ " +
+          (
+            parseFloat(price.innerText.replace(/[^0-9\.-]+/g, "")) *
+            usdToEur.eur
+          ).toFixed(2);
+      });
       // Change from GBP to EUR
     } else if (currentCurrency == "gbp") {
       const gbpToEur = await changeCurrency("gbp/eur.json");
-      priceToChangeOne.innerText =
-        "€ " +
-        (
-          parseFloat(priceToChangeOne.innerText.replace(/[^0-9\.-]+/g, "")) *
-          gbpToEur.eur
-        ).toFixed(2);
-      priceToChangeTwo.innerText =
-        "€ " +
-        (
-          parseFloat(priceToChangeTwo.innerText.replace(/[^0-9\.-]+/g, "")) *
-          gbpToEur.eur
-        ).toFixed(2);
-      priceToChangeThree.innerText =
-        "€ " +
-        (
-          parseFloat(priceToChangeThree.innerText.replace(/[^0-9\.-]+/g, "")) *
-          gbpToEur.eur
-        ).toFixed(2);
+      pricesToChange.forEach((price) => {
+        price.innerText =
+          "€ " +
+          (
+            parseFloat(price.innerText.replace(/[^0-9\.-]+/g, "")) *
+            gbpToEur.eur
+          ).toFixed(2);
+      });
     }
     // If the user clicks on GBP
   } else {
     // Change from USD to GBP
     if (currentCurrency == "usd") {
       const usdToGbp = await changeCurrency("usd/gbp.json");
-      priceToChangeOne.innerText =
-        "£ " +
-        (
-          parseFloat(priceToChangeOne.innerText.replace(/[^0-9\.-]+/g, "")) *
-          usdToGbp.gbp
-        ).toFixed(2);
-      priceToChangeTwo.innerText =
-        "£ " +
-        (
-          parseFloat(priceToChangeTwo.innerText.replace(/[^0-9\.-]+/g, "")) *
-          usdToGbp.gbp
-        ).toFixed(2);
-      priceToChangeThree.innerText =
-        "£ " +
-        (
-          parseFloat(priceToChangeThree.innerText.replace(/[^0-9\.-]+/g, "")) *
-          usdToGbp.gbp
-        ).toFixed(2);
+      pricesToChange.forEach((price) => {
+        price.innerText =
+          "£ " +
+          (
+            parseFloat(price.innerText.replace(/[^0-9\.-]+/g, "")) *
+            usdToGbp.gbp
+          ).toFixed(2);
+      });
       // Change from EUR to GBP
     } else if (currentCurrency == "eur") {
       const eurToGbp = await changeCurrency("eur/gbp.json");
-      priceToChangeOne.innerText =
-        "£ " +
-        (
-          parseFloat(priceToChangeOne.innerText.replace(/[^0-9\.-]+/g, "")) *
-          eurToGbp.gbp
-        ).toFixed(2);
-      priceToChangeTwo.innerText =
-        "£ " +
-        (
-          parseFloat(priceToChangeTwo.innerText.replace(/[^0-9\.-]+/g, "")) *
-          eurToGbp.gbp
-        ).toFixed(2);
-      priceToChangeThree.innerText =
-        "£ " +
-        (
-          parseFloat(priceToChangeThree.innerText.replace(/[^0-9\.-]+/g, "")) *
-          eurToGbp.gbp
-        ).toFixed(2);
+      pricesToChange.forEach((price) => {
+        price.innerText =
+          "£ " +
+          (
+            parseFloat(price.innerText.replace(/[^0-9\.-]+/g, "")) *
+            eurToGbp.gbp
+          ).toFixed(2);
+      });
     }
   }
 };
@@ -422,3 +364,109 @@ btnGBP.addEventListener("click", () => {
     changeCurrencyInHTML("gbp.json");
   }
 });
+
+// SLIDER SCRIPTS
+class Slider {
+  constructor(id) {
+    this.slider = document.getElementById(id);
+    this.images = Array.from(document.getElementById("images").children);
+    this.arrowLeft = document.getElementById("arrowLeft");
+    this.arrowRight = document.getElementById("arrowRight");
+    this.dots = Array.from(document.getElementById("dotsList").children);
+    this.activeImg = Array.from(document.getElementsByClassName("activeImg"));
+  }
+  nextLeft() {
+    this.arrowLeft.addEventListener("click", () => {
+      // After the user clicks the arrow we loop through all images and change the active class based on the currently active img
+      for (let i = 0; i < this.images.length; i++) {
+        const length = this.images.length;
+        if (this.images[i].classList.contains("activeImg")) {
+          if (i == 0) {
+            this.images[i].classList.remove("activeImg");
+            this.images[length - 1].classList.add("activeImg");
+            // Managing the dots to move everytime the user clicks the left arrow
+            this.dots[i].classList.remove("activeDot");
+            this.dots[length - 1].classList.add("activeDot");
+            break;
+          }
+          this.images[i].classList.remove("activeImg");
+          this.images[i - 1].classList.add("activeImg");
+          this.dots[i].classList.remove("activeDot");
+          this.dots[i - 1].classList.add("activeDot");
+          break;
+        }
+      }
+    });
+  }
+  nextRight() {
+    this.arrowRight.addEventListener("click", () => {
+      // After the user clicks the arrow we loop through all images and change the active class based on the currently active img
+      for (let i = 0; i < this.images.length; i++) {
+        const length = this.images.length;
+        if (this.images[i].classList.contains("activeImg")) {
+          if (i === length - 1) {
+            this.images[i].classList.remove("activeImg");
+            this.images[0].classList.add("activeImg");
+            // Managing the dots to move everytime the user clicks the right arrow
+            this.dots[i].classList.remove("activeDot");
+            this.dots[0].classList.add("activeDot");
+            break;
+          }
+          this.images[i].classList.remove("activeImg");
+          this.images[i + 1].classList.add("activeImg");
+          this.dots[i].classList.remove("activeDot");
+          this.dots[i + 1].classList.add("activeDot");
+          break;
+        }
+      }
+    });
+  }
+  dotsEventListener() {
+    // Looping through all dots and based on user click we change the active dot(and img) to be the one the user clicked
+    for (let i = 0; i < this.dots.length; i++) {
+      this.dots[i].addEventListener("click", () => {
+        if (this.dots[i].classList.contains("activeDot")) {
+        } else {
+          for (let j = 0; j < this.dots.length; j++) {
+            this.dots[j].classList.remove("activeDot");
+            this.images[j].classList.remove("activeImg");
+          }
+
+          this.dots[i].classList.add("activeDot");
+          this.images[i].classList.add("activeImg");
+        }
+      });
+    }
+  }
+  // KNOWN POSSIBILITY FOR IMPROVEMENT: the slide will change every 5 seconds. If 4 seconds after the slide changes the user clicks on the arrow or on the dots to change the image...
+  // the image will change again after only 1 seconds. This is because the setInterval is not taking into account user input (clicks).
+  // A solution could be clearInterval... but I did not manage to make it work. The interval should be cleared after every user click (on arrows or dots)
+  autoSlide() {
+    setInterval(() => {
+      for (let i = 0; i < this.images.length; i++) {
+        const length = this.images.length;
+        if (this.images[i].classList.contains("activeImg")) {
+          if (i === length - 1) {
+            this.images[i].classList.remove("activeImg");
+            this.images[0].classList.add("activeImg");
+            // Managing the dots to move everytime the user clicks the right arrow
+            this.dots[i].classList.remove("activeDot");
+            this.dots[0].classList.add("activeDot");
+            break;
+          }
+          this.images[i].classList.remove("activeImg");
+          this.images[i + 1].classList.add("activeImg");
+          this.dots[i].classList.remove("activeDot");
+          this.dots[i + 1].classList.add("activeDot");
+          break;
+        }
+      }
+    }, 5000);
+  }
+}
+
+const imgSlider = new Slider("slider");
+imgSlider.nextLeft();
+imgSlider.nextRight();
+imgSlider.dotsEventListener();
+imgSlider.autoSlide();

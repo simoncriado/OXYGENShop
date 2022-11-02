@@ -1,0 +1,178 @@
+@use "../core/mediaQueries" as mq;
+
+@import "../abstracts/variables";
+
+// Styles for the slider
+.section {
+    &__slider {
+        width: 95%;
+        max-width: 500px;
+        height: 300px;
+        margin: 30px auto;
+        position: relative;
+
+        @include mq.desktop {
+            max-width: 1000px;
+            height: 600px;
+        }
+
+        &__images {
+            margin: 0;
+            width: 100%;
+            background-color: black;
+            border-radius: 10px;
+        }
+
+        &__img {
+            display: none;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        & .activeImg {
+            display: block;
+            animation: fadeIn 1.5s;
+            // animation: fadeOut 1s;
+
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &__btn--left {
+            position: absolute;
+            color: white;
+            font-size: 2rem;
+            top: 45%;
+            left: 10%;
+            border-style: none;
+            background-color: transparent;
+            cursor: pointer;
+            transition: font-size 0.2s ease-in-out;
+
+            @include mq.desktop {
+                font-size: 3rem;
+            }
+        }
+
+        &__btn--left:hover {
+
+            @include mq.desktop {
+                color: $main-blue-color;
+                font-size: 4rem;
+            }
+        }
+
+        &__btn--right {
+            position: absolute;
+            color: white;
+            font-size: 2rem;
+            top: 45%;
+            right: 9%;
+            border-style: none;
+            background-color: transparent;
+            cursor: pointer;
+            transition: font-size 0.2s ease-in-out;
+
+            @include mq.desktop {
+                font-size: 3rem;
+            }
+        }
+
+        &__btn--right:hover {
+            @include mq.desktop {
+                color: $main-blue-color;
+                font-size: 4rem;
+            }
+        }
+
+        &__dotsList {
+            width: 100%;
+            bottom: 5%;
+            position: absolute;
+
+            &--dot {
+
+                &--one {
+                    width: 10px;
+                    height: 10px;
+                    border-style: none;
+                    border-radius: 50%;
+                    left: 30%;
+                    background-color: white;
+
+                    @include mq.desktop {
+                        left: 40%;
+                    }
+                }
+
+                &--two {
+                    width: 10px;
+                    height: 10px;
+                    border-style: none;
+                    border-radius: 50%;
+                    left: 40%;
+                    background-color: white;
+
+                    @include mq.desktop {
+                        left: 45%;
+                    }
+                }
+
+                &--three {
+                    width: 10px;
+                    height: 10px;
+                    border-style: none;
+                    border-radius: 50%;
+                    left: 50%;
+                    background-color: white;
+
+                    @include mq.desktop {
+                        left: 50%;
+                    }
+                }
+
+                &--four {
+                    width: 10px;
+                    height: 10px;
+                    border-style: none;
+                    border-radius: 50%;
+                    left: 60%;
+                    background-color: white;
+
+                    @include mq.desktop {
+                        left: 55%;
+                    }
+                }
+
+                &--five {
+                    width: 10px;
+                    height: 10px;
+                    border-style: none;
+                    border-radius: 50%;
+                    left: 70%;
+                    background-color: white;
+
+                    @include mq.desktop {
+                        left: 60%;
+                    }
+                }
+
+
+            }
+
+            & .activeDot {
+                background-color: $main-blue-color;
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
