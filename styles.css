@@ -1192,6 +1192,7 @@
   border-radius: 50%;
   left: 30%;
   background-color: white;
+  cursor: pointer;
 }
 @media all and (min-width: 960px) {
   .section__slider__dotsList--dot--one {
@@ -1205,6 +1206,7 @@
   border-radius: 50%;
   left: 40%;
   background-color: white;
+  cursor: pointer;
 }
 @media all and (min-width: 960px) {
   .section__slider__dotsList--dot--two {
@@ -1218,6 +1220,7 @@
   border-radius: 50%;
   left: 50%;
   background-color: white;
+  cursor: pointer;
 }
 @media all and (min-width: 960px) {
   .section__slider__dotsList--dot--three {
@@ -1231,6 +1234,7 @@
   border-radius: 50%;
   left: 60%;
   background-color: white;
+  cursor: pointer;
 }
 @media all and (min-width: 960px) {
   .section__slider__dotsList--dot--four {
@@ -1244,6 +1248,7 @@
   border-radius: 50%;
   left: 70%;
   background-color: white;
+  cursor: pointer;
 }
 @media all and (min-width: 960px) {
   .section__slider__dotsList--dot--five {
